@@ -9,7 +9,6 @@ class SLL:
         
         
     def insert_beginning  (self,data):
-        
         nb = Node(data)
         nb.next = self.head
         self.head = nb
