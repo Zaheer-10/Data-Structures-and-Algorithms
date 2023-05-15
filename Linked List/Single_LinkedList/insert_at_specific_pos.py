@@ -20,9 +20,7 @@ class SLL :
             
         else:
             temp = self.head
-            
             previous = None
-            
             count = 0
             
             while count<position:
