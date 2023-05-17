@@ -7,12 +7,12 @@ def remove_duplicates(head) :
     if not head:
         return head
 
-    curr = head
-    while curr and curr.next:
-        if curr.val == curr.next.val:
-            curr.next = curr.next.next
+    temp = head
+    while temp and temp.next:
+        if temp.val == temp.next.val:
+            temp.next = temp.next.next
         else:
-            curr = curr.next
+            temp = temp.next
 
     return head
 # Create a sorted singly linked list with duplicates
