@@ -1,6 +1,7 @@
 def merge_sort(array):
     if len(array)<= 1:
         return array
+    
     mid = len(array)//2
     left = merge_sort(array[:mid])
     right = merge_sort(array[mid:])
@@ -9,11 +10,11 @@ def merge_sort(array):
 
 def merge(left,right):
     sorted_list = []
-    
     left_index = 0
     right_index = 0 
     
     while left_index < len(left) and right_index < len(right):
+        
         if left[left_index] <=  right[right_index]:
             sorted_list.append(left[left_index])
             left_index +=1
