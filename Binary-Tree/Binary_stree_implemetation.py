@@ -1,4 +1,3 @@
-
 class BST:
     def __init__(self, data):
         self.data = data
@@ -10,10 +9,10 @@ class BST:
         if self.data is None:
             self.data = data
             
-        if self.data == data:
+        if self.data == data: # Dealing with Duplicates
             return
         
-        if self.data > data:
+        if self.data > data: 
             if self.lchild:
                 self.lchild.insert(data)
             else:
@@ -41,6 +40,7 @@ class BST:
                 return self.lchild.search(data)
             else:
                 print("Sorry! Element is Not found ")
+                return None
                 
         else :
             
@@ -48,6 +48,7 @@ class BST:
                 return self.rchild.search(data)
             else:
                 print("Not found")
+                return None
                 
 # ------------------------------------------------------------------------------------------------
       
@@ -70,7 +71,7 @@ class BST:
         print(self.data, "  ",end='')
         if self.rchild:
             self.rchild.inorder()
-        return ''
+        return 
 # ------------------------------------------------------------------------------------------------
     def postorder(self):
         # Left --> Right --> Root
@@ -81,21 +82,86 @@ class BST:
         print(self.data,"  ", end='')
         return ''
 # ------------------------------------------------------------------------------------------------
+    
+    def delete(self, data , curr):
+        if self.data is None:
+            print("Tree is Empty")
+            return None
+        
+        if data < self.data:
+            if self.lchild:
+                self.lchild = self.lchild.delete(data,curr)
+            # else:
+                # print("Given Data is Not Found")
+                
+        elif data > self.data:
+            if self.rchild:
+                self.rchild = self.rchild.delete(data,curr)
+            # else:
+                # print("Given data is Not Found")
+                
+        else: 
+            
+            if self.lchild is None:
+                temp = self.rchild
+                if data == curr:
+                    self.data = temp.data
+                    self.lchild = temp.lchild 
+                    self.rchild = temp.rchild
+                    temp = None
+                    return
+                self = None
+                return temp
+            
+            if self.rchild is None:
+                temp = self.lchild
+                
+                if data == curr:
+                    self.data = temp.data
+                    self.lchild = temp.lchild 
+                    self.rchild = temp.rchild
+                    temp = None
+                    return
 
+                self = None
+                return temp
+            
+            #2child scenario
+             
+            # lowest node from right sub tree = lw_node
+            lw_node = self.rchild
+            while self.lchild:
+                lw_node = lw_node.lchild
+                # replace lw_node with rchild
+                self.data = lw_node.data
+                self.rchild = lw_node.rchild
+            return self
+# ------------------------------------------------------------------------------------------------
+            
  
       
       
 # ------------------------------------------------------------------------------------------------
+def counts(no_of_Nodes):
+    if no_of_Nodes is None:
+        return 0
+    
+    return 1 + counts(no_of_Nodes.lchild)+counts(no_of_Nodes.rchild)
           
-root = BST(10)
-values = [6,3,1,7,98]
+root = BST(100)
+values = [55,58,63,10,110,120,105,164,145]
 for i in values:
     root.insert(i)
-    
+print(counts(root))
 # print(root.search(321))
-print("In-Order")
+
+# print("In-Order")
+# print(root.inorder())
+# print("Pre-Order")
+# print(root.preorder())
+# print("IN-Order")
+# root.delete(5,root.data)
 print(root.inorder())
-print("Pre-Order")
-print(root.preorder())
-print("Post-Order")
-print(root.postorder())
+
+print(root.delete(58 ,root.data))
+print(root.inorder())
