@@ -1,5 +1,6 @@
 # Data Structure and# Data Structure and Algorithms in Python 🐍
 👋 Welcome to my repository on Data Structures and Algorithms in Python! Here, you will find implementation of various data structures and algorithms using Python programming language.
+![alt text](https://github.com/Zaheer-10/Data-Structures-and-Algorithms/blob/main/Pictures_/DSApython.png?raw=true)
 
 ## Why learn data structure and algorithms? 🤔
 Data structure and algorithms are the building blocks of any software application. They help us to organize, store, manipulate, and process data efficiently and effectively. They also help us to solve complex problems by breaking them down into simpler subproblems. Learning data structure and algorithms can improve your logical thinking, problem-solving, and coding skills. It can also help you to ace technical interviews and land your dream job.
