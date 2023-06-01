@@ -92,7 +92,8 @@ minHeap.insert(9)
 minHeap.insert(4)
 minHeap.insert(13)
 
-h = [15,7,9,4,13]
+h = [15,
+     7,9,4,13]
 minHeap.build_heap(h)
 minHeap.delete(7)
 minHeap.print_heap()
