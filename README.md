@@ -1,4 +1,4 @@
-# Data Structure and# Data Structure and Algorithms in Python 🐍
+# Data Structure and Algorithms in Python 🐍
 👋 Welcome to my repository on Data Structures and Algorithms in Python! Here, you will find implementation of various data structures and algorithms using Python programming language.
 ![alt text](https://github.com/Zaheer-10/Data-Structures-and-Algorithms/blob/main/Pictures_/DSApython.png?raw=true)
 
