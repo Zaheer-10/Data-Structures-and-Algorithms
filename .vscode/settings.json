@@ -15,5 +15,6 @@
     "preorder",
     "rchild",
     "soulo"
-  ]
+  ],
+  "DockerRun.DisableDockerrc": true
 }
