@@ -35,15 +35,13 @@ class Graph:
     visited = set()
     stack = [start_node]
 
-    while stack :
+    while stack:
       node = stack.pop()
       if node not in visited:
         visited.add(node)
         print(node , end='')
 
-        for i in self.graph[node]:
-          if i not in visited :
-            stack.append(i)
+        stack.extend(i for i in self.graph[node] if i not in visited)
 # -------------------------------------------------------------------------------------------------------
 
   def Bfs(self, start_node):
